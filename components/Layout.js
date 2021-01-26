@@ -1,5 +1,7 @@
-import Header from "./Header"
 import Head from "next/head"
+
+import Header from "./Header"
+import CategoryList from "./CategoryList"
 
 import styles from "./Layout.module.scss"
 
@@ -12,6 +14,7 @@ const Layout = (props) => (
     </Head>
 
     <Header />
+    <CategoryList />
 
     <div className={styles.Content}>{props.children}</div>
   </div>
