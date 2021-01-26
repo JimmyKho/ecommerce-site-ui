@@ -1,5 +1,10 @@
 import Layout from "../components/Layout"
+import PageCarousel from "../components/PageCarousel"
 
 export default function Home() {
-  return <Layout>Welcome to Assessment</Layout>
+  return (
+    <Layout>
+      <PageCarousel />
+    </Layout>
+  )
 }
