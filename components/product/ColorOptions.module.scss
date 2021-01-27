@@ -1,0 +1,23 @@
+@import "../../theme/theme";
+
+$radius: 50%;
+$size: 25px;
+
+.ColorOptions {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &__Item {
+    width: $size;
+    height: $size;
+    border: 2px solid $disable;
+    border-radius: $radius;
+    margin-right: 10px;
+
+    &--Selected {
+      border-color: $black;
+    }
+  }
+}

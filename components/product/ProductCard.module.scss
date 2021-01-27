@@ -1,6 +1,7 @@
 @import "../../theme/theme";
 
 $radius: 15px;
+$padding: 10px;
 
 .ProductCard {
   display: flex;
@@ -33,17 +34,31 @@ $radius: 15px;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    padding: $padding;
+
+    &__Title {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &__Price {
+      font-size: 18px;
+      font-weight: bold;
+      color: $secondary;
+    }
   }
 
   &__Option {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: $padding;
   }
 
   &__Footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: $padding;
   }
 }

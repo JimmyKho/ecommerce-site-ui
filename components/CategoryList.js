@@ -4,8 +4,8 @@ import styles from "./Category.module.scss"
 
 const CategoryList = (props) => (
   <div className={styles.CategoryList}>
-    {LIST.map((item) => (
-      <CategoryListItem name={item} />
+    {LIST.map((item, index) => (
+      <CategoryListItem key={"Item" + index} name={item} />
     ))}
   </div>
 )
