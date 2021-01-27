@@ -3,17 +3,24 @@
 $radius: 50%;
 $size: 25px;
 
-.ColorOptions {
+.SizeOptions {
   display: flex;
   flex-direction: row;
   align-items: center;
 
   &__Item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: $size;
     height: $size;
     border: 2px solid $disable;
     border-radius: $radius;
     margin-right: 10px;
+
+    font-size: 10px;
+    font-weight: bold;
+    color: $disable;
 
     &--Selected {
       border-color: $black;

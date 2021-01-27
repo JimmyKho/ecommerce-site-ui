@@ -1,4 +1,5 @@
 import ColorOptions from "./ColorOptions"
+import SizeOptions from "./SizeOptions"
 
 import styles from "./ProductCard.module.scss"
 
@@ -14,7 +15,7 @@ const ProductCard = () => (
       </div>
       <div className={styles.ProductCard__Option}>
         <ColorOptions options={COLORS} />
-        <div>Sizes</div>
+        <SizeOptions options={SIZES} />
       </div>
       <div className={styles.ProductCard__Footer}>
         <div>Rating</div>
@@ -38,5 +39,17 @@ const COLORS = [
   {
     name: "white",
     code: "#003060",
+  },
+]
+
+const SIZES = [
+  {
+    name: "X",
+  },
+  {
+    name: "M",
+  },
+  {
+    name: "L",
   },
 ]
