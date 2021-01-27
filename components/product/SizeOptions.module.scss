@@ -8,7 +8,7 @@ $size: 25px;
   flex-direction: row;
   align-items: center;
 
-  &__Item {
+  &_Item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ $size: 25px;
     font-weight: bold;
     color: $disable;
 
-    &--Selected {
+    &___Selected {
       border-color: $black;
     }
   }

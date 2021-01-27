@@ -6,7 +6,7 @@ const SizeOptions = (props) => {
   return (
     <div className={styles.SizeOptions}>
       {options.map((option, index) => (
-        <div key={"Item" + index} className={styles.SizeOptions__Item}>
+        <div key={"Item" + index} className={styles.SizeOptions_Item}>
           {option.name}
         </div>
       ))}

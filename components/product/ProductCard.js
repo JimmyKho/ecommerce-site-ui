@@ -5,19 +5,19 @@ import styles from "./ProductCard.module.scss"
 
 const ProductCard = () => (
   <div className={styles.ProductCard}>
-    <div className={styles.ProductCard__ImageCont}>
-      <img className={styles.ProductCard__Image} src="/prod1_grey3.jpg" />
+    <div className={styles.ProductCard_ImageCont}>
+      <img className={styles.ProductCard_Image} src="/prod1_grey3.jpg" />
     </div>
-    <div className={styles.ProductCard__Content}>
-      <div className={styles.ProductCard__Heading}>
-        <div className={styles.ProductCard__Heading__Title}>White Traditional Long Dress</div>
-        <div className={styles.ProductCard__Heading__Price}>$3.99</div>
+    <div className={styles.ProductCard_Content}>
+      <div className={styles.ProductCard_Heading}>
+        <div className={styles.ProductCard_Heading_Title}>White Traditional Long Dress</div>
+        <div className={styles.ProductCard_Heading_Price}>$3.99</div>
       </div>
-      <div className={styles.ProductCard__Option}>
+      <div className={styles.ProductCard_Option}>
         <ColorOptions options={COLORS} />
         <SizeOptions options={SIZES} />
       </div>
-      <div className={styles.ProductCard__Footer}>
+      <div className={styles.ProductCard_Footer}>
         <div>Rating</div>
         <div>Buy</div>
       </div>

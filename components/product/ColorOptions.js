@@ -6,7 +6,7 @@ const ColorOptions = (props) => {
   return (
     <div className={styles.ColorOptions}>
       {options.map((option, index) => (
-        <div key={"Item" + index} className={styles.ColorOptions__Item} style={{ backgroundColor: option.code }} />
+        <div key={"Item" + index} className={styles.ColorOptions_Item} style={{ backgroundColor: option.code }} />
       ))}
     </div>
   )

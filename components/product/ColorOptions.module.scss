@@ -8,14 +8,14 @@ $size: 25px;
   flex-direction: row;
   align-items: center;
 
-  &__Item {
+  &_Item {
     width: $size;
     height: $size;
     border: 2px solid $disable;
     border-radius: $radius;
     margin-right: 10px;
 
-    &--Selected {
+    &___Selected {
       border-color: $black;
     }
   }
