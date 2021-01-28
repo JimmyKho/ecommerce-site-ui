@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import ModalPrice from "./ModalPrice"
 import ColorOptions from "./ColorOptions"
 import SizeOptions from "./SizeOptions"
@@ -5,9 +7,19 @@ import SizeOptions from "./SizeOptions"
 import styles from "./ProductModal.module.scss"
 
 const ProductModal = (props) => {
+  const [quantity, setQuantity] = useState(0)
+
   const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {} } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
   const { rating = 0 } = info
+
+  const addQuantityFn = () => {
+    setQuantity(quantity + 1)
+  }
+
+  const minusQuantityFn = () => {
+    if (quantity - 1 != -1) setQuantity(quantity - 1)
+  }
 
   return (
     <div className={styles.ProductModal}>
@@ -66,9 +78,13 @@ const ProductModal = (props) => {
           <div className={styles.ProductModal_Detail_Info_Title}>Quantity</div>
         </div>
         <div className={styles.ProductModal_Detail_Quantity}>
-          <div className={styles.ProductModal_Detail_Quantity_Amount}>0</div>
-          <div className={styles.ProductModal_Detail_Quantity_Button}>-</div>
-          <div className={styles.ProductModal_Detail_Quantity_Button}>+</div>
+          <div className={styles.ProductModal_Detail_Quantity_Amount}>{quantity}</div>
+          <div onClick={minusQuantityFn} className={styles.ProductModal_Detail_Quantity_Button}>
+            -
+          </div>
+          <div onClick={addQuantityFn} className={styles.ProductModal_Detail_Quantity_Button}>
+            +
+          </div>
         </div>
 
         <div className={styles.ProductModal_Detail_Space} />
