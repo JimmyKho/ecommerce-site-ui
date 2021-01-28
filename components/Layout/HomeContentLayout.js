@@ -11,20 +11,7 @@ const HomeContentLayout = (props) => {
         <div className={styles.HomeContentLayout_Heading_Title}>{title}</div>
         <div className={styles.HomeContentLayout_Heading_More}>{more}</div>
       </div>
-      <div className={styles.HomeContentLayout_Content}>
-        <div className={styles.HomeContentLayout_Content_Item}>
-          <ProductCard />
-        </div>
-        <div className={styles.HomeContentLayout_Content_Item}>
-          <ProductCard />
-        </div>
-        <div className={styles.HomeContentLayout_Content_Item}>
-          <ProductCard />
-        </div>
-        <div className={styles.HomeContentLayout_Content_Item}>
-          <ProductCard />
-        </div>
-      </div>
+      <div className={styles.HomeContentLayout_Content}>{children}</div>
     </div>
   )
 }
