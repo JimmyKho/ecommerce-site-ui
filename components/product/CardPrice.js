@@ -1,4 +1,4 @@
-import styles from "./CardPrice.module.scss"
+import styles from "./Price.module.scss"
 
 const CardPrice = (props) => {
   const { price, oriPrice } = props

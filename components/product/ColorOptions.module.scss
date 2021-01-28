@@ -2,6 +2,7 @@
 
 $radius: 50%;
 $size: 25px;
+$size-big: 40px;
 
 .ColorOptions {
   display: flex;
@@ -14,6 +15,24 @@ $size: 25px;
     border: 2px solid $disable;
     border-radius: $radius;
     margin-right: 8px;
+
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: $zoom-scale;
+    }
+
+    &___Selected {
+      border-color: $black;
+    }
+  }
+
+  &_ItemLarge {
+    width: $size-big;
+    height: $size-big;
+    border: 3px solid $disable;
+    border-radius: $radius;
+    margin-right: 15px;
 
     transition: transform 0.2s;
 

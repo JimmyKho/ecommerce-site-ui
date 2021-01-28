@@ -34,30 +34,3 @@ const ProductCard = (props) => {
 }
 
 export default ProductCard
-
-const COLORS = [
-  {
-    name: "White",
-    code: "#fdfdfd",
-  },
-  {
-    name: "Brown",
-    code: "#a47551",
-  },
-  {
-    name: "white",
-    code: "#003060",
-  },
-]
-
-const SIZES = [
-  {
-    name: "X",
-  },
-  {
-    name: "M",
-  },
-  {
-    name: "L",
-  },
-]

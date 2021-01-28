@@ -1,0 +1,211 @@
+@import "../../theme/theme";
+
+.ProductModal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 20px;
+
+  &_Image {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 10px;
+
+    &_Gallery {
+      flex: 1;
+
+      &_Item {
+        width: 100%;
+        margin-bottom: 10px;
+        border: 2px solid $disable;
+      }
+    }
+
+    &_Preview {
+      flex: 4;
+      width: 100%;
+      margin: 0 10px;
+      border: 2px solid $disable;
+    }
+  }
+
+  &_Detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    &_Extra {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      font-size: 12px;
+      font-family: $number-font;
+
+      &_Promo {
+        color: $white;
+
+        border-radius: 20px;
+        background-color: $secondary;
+
+        padding: 5px 15px;
+        margin-right: 10px;
+      }
+
+      &_Rating {
+        color: $grey;
+      }
+    }
+
+    &_Info {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      padding-bottom: 5px;
+
+      &_Title {
+        color: $grey;
+        margin-right: 10px;
+
+        &___Regular {
+          color: $black;
+        }
+
+        &___Primary {
+          color: $primary;
+        }
+      }
+    }
+
+    &_Name {
+      font-size: 25px;
+      font-weight: bold;
+
+      padding: 10px 0;
+    }
+
+    &_Quantity {
+      display: flex;
+      flex-direction: row;
+
+      font-weight: 900;
+      font-family: $number-font;
+
+      &_Amount {
+        flex: 1;
+
+        font-size: 18px;
+
+        height: 50px;
+
+        border: 2px solid $disable;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 0px 15px;
+      }
+
+      &_Button {
+        font-size: 20px;
+
+        width: 50px;
+        height: 50px;
+        border: 2px solid $disable;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-left: 5px;
+      }
+    }
+
+    &_Action {
+      display: flex;
+      flex-direction: row;
+
+      &_Favourite {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: 40px;
+        height: 40px;
+
+        background-color: $white;
+
+        border-radius: 50%;
+        box-shadow: $shadow-icon;
+      }
+
+      &_Button {
+        font-size: 18px;
+
+        height: 40px;
+
+        &___Primary {
+          flex: 1;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          padding: 0px 15px;
+          color: $white;
+          background-color: $primary;
+
+          border-radius: 10px;
+          border: 2px solid $primary;
+
+          box-shadow: $shadow-square;
+        }
+
+        &___Secondary {
+          flex: 1;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          padding: 0px 15px;
+          color: $primary;
+          background-color: $white;
+
+          border-radius: 10px;
+          border: 2px solid $primary;
+
+          box-shadow: $shadow-square;
+        }
+      }
+
+      &_Space {
+        width: 10px;
+      }
+    }
+
+    &_Space {
+      width: 100%;
+      height: 20px;
+    }
+  }
+}

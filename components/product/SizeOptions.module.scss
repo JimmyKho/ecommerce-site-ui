@@ -2,13 +2,14 @@
 
 $radius: 50%;
 $size: 25px;
+$size-big: 40px;
 
 .SizeOptions {
   display: flex;
   flex-direction: row;
   align-items: center;
 
-  font-family: $price-font;
+  font-family: $number-font;
 
   &_Item {
     display: flex;
@@ -21,6 +22,31 @@ $size: 25px;
     margin-left: 8px;
 
     font-size: 10px;
+    font-weight: bold;
+    color: $disable;
+
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: $zoom-scale;
+    }
+
+    &___Selected {
+      border-color: $black;
+    }
+  }
+
+  &_ItemLarge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size-big;
+    height: $size-big;
+    border: 3px solid $disable;
+    border-radius: $radius;
+    margin-right: 15px;
+
+    font-size: 15px;
     font-weight: bold;
     color: $disable;
 
