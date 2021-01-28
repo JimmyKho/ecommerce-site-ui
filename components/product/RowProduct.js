@@ -9,7 +9,7 @@ const RowProduct = (props) => {
     <div className={styles.RowProduct}>
       {list.map((item) => (
         <div className={styles.RowProduct_Item}>
-          <ProductCard />
+          <ProductCard data={item} />
         </div>
       ))}
     </div>

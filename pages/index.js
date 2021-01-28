@@ -6,7 +6,7 @@ import RowProduct from "../components/Product/RowProduct"
 export default function Home() {
   return (
     <Layout>
-      <PageCarousel />
+      {/* <PageCarousel /> */}
       <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}>
         <RowProduct list={PRODUCTS} />
       </HomeContentLayout>
@@ -16,7 +16,7 @@ export default function Home() {
 
 const PRODUCTS = [
   {
-    name: "Indian Cotton Double Gauze Shirt",
+    name: "Indian Cotton Gauze Shirt",
     code: "4550344324004",
     price: 109,
     discAmount: 20,
@@ -25,7 +25,7 @@ const PRODUCTS = [
       colors: [
         {
           name: "Grey",
-          code: "#fdfdfd",
+          code: "#d8d7d5",
         },
         {
           name: "Brown",
@@ -46,7 +46,7 @@ const PRODUCTS = [
     },
   },
   {
-    name: "Merino Wool Washable High Neck",
+    name: "Merino Wool High Neck",
     code: "4550344168301",
     price: 159,
     discAmount: 20,
@@ -55,11 +55,11 @@ const PRODUCTS = [
       colors: [
         {
           name: "Brown",
-          code: "#fdfdfd",
+          code: "#a47551",
         },
         {
           name: "Grey",
-          code: "#a47551",
+          code: "#d8d7d5",
         },
       ],
       sizes: [
@@ -76,7 +76,7 @@ const PRODUCTS = [
     },
   },
   {
-    name: "Moisture wicking water repellent hooded jacket Sealing taped",
+    name: "Moisture Hooded Jacket",
     code: "4550182976489",
     price: 229,
     discAmount: 30,
@@ -85,11 +85,11 @@ const PRODUCTS = [
       colors: [
         {
           name: "Black",
-          code: "#fdfdfd",
+          code: "#050606",
         },
         {
           name: "Green",
-          code: "#a47551",
+          code: "#59981a",
         },
       ],
       sizes: [
@@ -106,7 +106,7 @@ const PRODUCTS = [
     },
   },
   {
-    name: "WALK-SUPPORT WATER REPELLENT SNEAKERS",
+    name: "Water Repellent Sneakers",
     code: "4550182295511",
     price: 99.9,
     discAmount: 25,
@@ -115,11 +115,11 @@ const PRODUCTS = [
       colors: [
         {
           name: "Navy",
-          code: "#fdfdfd",
+          code: "#003060",
         },
         {
           name: "Green",
-          code: "#a47551",
+          code: "#59981a",
         },
       ],
       sizes: [

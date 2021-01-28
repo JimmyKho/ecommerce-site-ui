@@ -1,0 +1,22 @@
+@import "../../theme/theme";
+
+.CardPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  white-space: nowrap;
+
+  &_Price {
+    font-size: 15px;
+    font-weight: bold;
+    color: $secondary;
+  }
+
+  &_OriPrice {
+    font-size: 12px;
+    font-weight: bold;
+    color: $disable;
+  }
+}
