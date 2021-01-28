@@ -14,6 +14,8 @@ $radius: 15px;
 
   box-shadow: $shadow-square;
 
+  animation: fadein 1s;
+
   &_Content {
     flex: 1;
     font-size: 14px;
