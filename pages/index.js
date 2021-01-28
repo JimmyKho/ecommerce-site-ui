@@ -7,7 +7,7 @@ import RowVoucher from "../components/Voucher/RowVoucher"
 export default function Home() {
   return (
     <Layout>
-      <PageCarousel />
+      {/* <PageCarousel /> */}
       <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}>
         <RowProduct list={PRODUCTS} />
       </HomeContentLayout>
