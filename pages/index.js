@@ -1,12 +1,12 @@
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import PageCarousel from "../components/PageCarousel"
-import HomeListingLayout from "../components/layout/HomeListingLayout"
+import HomeContentLayout from "../components/Layout/HomeContentLayout"
 
 export default function Home() {
   return (
     <Layout>
       {/* <PageCarousel /> */}
-      <HomeListingLayout />
+      <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}></HomeContentLayout>
     </Layout>
   )
 }
