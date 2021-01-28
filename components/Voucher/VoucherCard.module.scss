@@ -12,6 +12,8 @@ $radius: 15px;
   border-radius: $radius;
   overflow: hidden;
 
+  box-shadow: $shadow-square;
+
   &_Content {
     flex: 1;
     font-size: 14px;
