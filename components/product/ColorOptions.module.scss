@@ -21,10 +21,6 @@ $size-big: 40px;
     &:hover {
       transform: $zoom-scale;
     }
-
-    &___Selected {
-      border-color: $black;
-    }
   }
 
   &_ItemLarge {
@@ -39,9 +35,9 @@ $size-big: 40px;
     &:hover {
       transform: $zoom-scale;
     }
+  }
 
-    &___Selected {
-      border-color: $black;
-    }
+  &___Selected {
+    border-color: $black;
   }
 }

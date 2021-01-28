@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Button } from "react-bootstrap"
 
 import ModalPrice from "./ModalPrice"
 import ColorOptions from "./ColorOptions"
@@ -8,6 +9,8 @@ import styles from "./ProductModal.module.scss"
 
 const ProductModal = (props) => {
   const [quantity, setQuantity] = useState(0)
+  const [size, setSize] = useState()
+  const [color, setColor] = useState()
 
   const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {} } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
@@ -58,7 +61,7 @@ const ProductModal = (props) => {
           <div className={styles.ProductModal_Detail_Info_Title___Regular}>Selected Color</div>
         </div>
         <div className={styles.ProductModal_Detail_Info}>
-          <ColorOptions options={colors} large />
+          <ColorOptions selected={color} onSelect={(item) => setColor(item)} options={colors} large />
         </div>
 
         <div className={styles.ProductModal_Detail_Space} />
@@ -67,7 +70,7 @@ const ProductModal = (props) => {
           <div className={styles.ProductModal_Detail_Info_Title}>Size</div>
         </div>
         <div className={styles.ProductModal_Detail_Info}>
-          <SizeOptions options={sizes} large />
+          <SizeOptions selected={size} onSelect={(item) => setSize(item)} options={sizes} large />
         </div>
 
         <div className={styles.ProductModal_Detail_Info_Title___Regular}>Size Guide</div>
