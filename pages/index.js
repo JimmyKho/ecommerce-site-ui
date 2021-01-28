@@ -26,6 +26,10 @@ const PRODUCTS = [
     price: 109,
     discAmount: 20,
     oriPrice: 136.25,
+    brand: "MUJI",
+    info: {
+      rating: 4.8,
+    },
     attr: {
       colors: [
         {
@@ -56,6 +60,10 @@ const PRODUCTS = [
     price: 159,
     discAmount: 20,
     oriPrice: 195.75,
+    brand: "MUJI",
+    info: {
+      rating: 4.6,
+    },
     attr: {
       colors: [
         {
@@ -86,6 +94,10 @@ const PRODUCTS = [
     price: 229,
     discAmount: 30,
     oriPrice: 327.1,
+    brand: "MUJI",
+    info: {
+      rating: 4.9,
+    },
     attr: {
       colors: [
         {
@@ -116,6 +128,10 @@ const PRODUCTS = [
     price: 99.9,
     discAmount: 25,
     oriPrice: 132.6,
+    brand: "MUJI",
+    info: {
+      rating: 4.3,
+    },
     attr: {
       colors: [
         {

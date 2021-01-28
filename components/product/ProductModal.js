@@ -5,7 +5,7 @@ import SizeOptions from "./SizeOptions"
 import styles from "./ProductModal.module.scss"
 
 const ProductModal = (props) => {
-  const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {} } = props.data ?? PRODUCT
+  const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {} } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
   const { rating = 0 } = info
 
