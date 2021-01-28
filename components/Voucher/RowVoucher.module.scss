@@ -1,0 +1,14 @@
+@import "../../theme/theme";
+
+.RowVoucher {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  &_Item {
+    width: 20%;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../theme/theme";
+
+$radius: 15px;
+
+.VoucherCard {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  background: white;
+
+  border-radius: $radius;
+  overflow: hidden;
+
+  &_Content {
+    flex: 1;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 10px;
+
+    &_Name {
+      color: $black;
+      margin-bottom: 10px;
+    }
+
+    &_Code {
+      color: $secondary;
+    }
+  }
+
+  &_Discount {
+    text-align: center;
+    padding: 20px;
+    background-color: $primary;
+
+    font-size: 15px;
+    color: $white;
+    white-space: nowrap;
+
+    &_Amount {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    &_Desc {
+    }
+  }
+}

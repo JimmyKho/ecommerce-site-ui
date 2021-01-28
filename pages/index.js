@@ -2,13 +2,18 @@ import Layout from "../components/Layout/Layout"
 import PageCarousel from "../components/PageCarousel"
 import HomeContentLayout from "../components/Layout/HomeContentLayout"
 import RowProduct from "../components/Product/RowProduct"
+import RowVoucher from "../components/Voucher/RowVoucher"
 
 export default function Home() {
   return (
     <Layout>
-      {/* <PageCarousel /> */}
+      <PageCarousel />
       <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}>
         <RowProduct list={PRODUCTS} />
+      </HomeContentLayout>
+
+      <HomeContentLayout more={<div>More Voucher</div>}>
+        <RowVoucher list={VOUCHERS} />
       </HomeContentLayout>
     </Layout>
   )
@@ -137,5 +142,28 @@ const PRODUCTS = [
         },
       ],
     },
+  },
+]
+
+const VOUCHERS = [
+  {
+    name: "Monday Happy",
+    code: "#MONHPY",
+    discAmount: 20,
+  },
+  {
+    name: "Payday Surprise",
+    code: "#SRPSPYDY",
+    discAmount: 20,
+  },
+  {
+    name: "First Order",
+    code: "#HPYFRST",
+    discAmount: 20,
+  },
+  {
+    name: "Vegetarian Food",
+    code: "#VEGANLOVE",
+    discAmount: 20,
   },
 ]
