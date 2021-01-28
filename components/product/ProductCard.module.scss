@@ -15,6 +15,11 @@ $padding: 10px;
   box-shadow: $shadow-square;
 
   animation: fadein 1s;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: $zoom-scale;
+  }
 
   &_ImageCont {
     width: 100%;

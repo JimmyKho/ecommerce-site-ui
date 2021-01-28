@@ -4,6 +4,8 @@
 $shadow-square: 0px 0px 40px -10px rgba(211, 211, 211, 1);
 $shadow-icon: 25px 25px 40px -10px rgba(211, 211, 211, 1);
 
+$zoom-scale: scale(1.05);
+
 @keyframes fadein {
   from {
     opacity: 0;

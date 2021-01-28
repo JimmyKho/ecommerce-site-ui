@@ -16,5 +16,9 @@
 
   &_Item {
     padding: 5px 10px;
+
+    &:hover {
+      background-color: $grey-light;
+    }
   }
 }
