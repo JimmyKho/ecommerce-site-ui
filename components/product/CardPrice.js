@@ -12,7 +12,7 @@ const CardPrice = (props) => {
 }
 
 const getPrice = (value) => {
-  return `$ ${value.toFixed(2)}`
+  return `$${value.toFixed(2)}`
 }
 
 export default CardPrice

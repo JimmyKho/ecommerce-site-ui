@@ -40,14 +40,15 @@ $padding: 10px;
     align-items: flex-start;
     padding: $padding;
 
+    font-weight: bold;
+
     &_Title {
       font-size: 18px;
-      font-weight: 400;
+      letter-spacing: 0.5px;
     }
 
     &_Price {
       font-size: 18px;
-      font-weight: bold;
       color: $secondary;
     }
   }

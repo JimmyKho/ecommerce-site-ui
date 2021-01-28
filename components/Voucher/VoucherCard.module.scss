@@ -6,6 +6,8 @@ $radius: 15px;
   display: flex;
   flex-direction: row;
 
+  font-size: 15px;
+
   width: 100%;
   background: white;
 
@@ -18,17 +20,22 @@ $radius: 15px;
 
   &_Content {
     flex: 1;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-weight: bold;
-    padding: 20px 10px;
+    padding: 20px;
 
     &_Name {
-      color: $black;
+      font-size: 12px;
+      color: $grey;
       margin-bottom: 10px;
     }
 
     &_Code {
+      font-weight: 900;
       color: $secondary;
+      letter-spacing: 1px;
     }
   }
 
@@ -37,16 +44,19 @@ $radius: 15px;
     padding: 20px;
     background-color: $primary;
 
-    font-size: 15px;
+    font-size: 16px;
     color: $white;
     white-space: nowrap;
 
     &_Amount {
-      font-weight: bold;
+      font-family: $price-font;
+      font-weight: 900;
       margin-bottom: 5px;
     }
 
     &_Desc {
+      font-weight: normal;
+      letter-spacing: 1px;
     }
   }
 }
