@@ -1,5 +1,8 @@
 import { useState } from "react"
 import { Button } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
+import { faStar, faHeart } from "@fortawesome/free-regular-svg-icons"
 
 import ModalPrice from "./ModalPrice"
 import ColorOptions from "./ColorOptions"
@@ -11,6 +14,7 @@ const ProductModal = (props) => {
   const [quantity, setQuantity] = useState(0)
   const [size, setSize] = useState()
   const [color, setColor] = useState()
+  const [fav, setFav] = useState(false)
 
   const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {} } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
@@ -23,6 +27,14 @@ const ProductModal = (props) => {
   const minusQuantityFn = () => {
     if (quantity - 1 != -1) setQuantity(quantity - 1)
   }
+
+  const setFavFn = () => {
+    setFav(!fav)
+  }
+
+  var favStyle = styles.ProductModal_Detail_Action_Favourite_Icon
+
+  if (fav) favStyle += " " + styles.ProductModal_Detail_Action_Favourite_Icon___Active
 
   return (
     <div className={styles.ProductModal}>
@@ -38,7 +50,10 @@ const ProductModal = (props) => {
       <div className={styles.ProductModal_Detail}>
         <div className={styles.ProductModal_Detail_Extra}>
           <div className={styles.ProductModal_Detail_Extra_Promo}>- {discAmount}%</div>
-          <div className={styles.ProductModal_Detail_Extra_Rating}>{rating}</div>
+          <div className={styles.ProductModal_Detail_Extra_Rating}>
+            <FontAwesomeIcon className={styles.ProductModal_Detail_Extra_Rating_Icon} icon={faStar} />
+            {rating}
+          </div>
         </div>
         <div className={styles.ProductModal_Detail_Name}>{name}</div>
         <div className={styles.ProductModal_Detail_Info}>
@@ -93,7 +108,9 @@ const ProductModal = (props) => {
         <div className={styles.ProductModal_Detail_Space} />
 
         <div className={styles.ProductModal_Detail_Action}>
-          <div className={styles.ProductModal_Detail_Action_Favourite}>X</div>
+          <div className={styles.ProductModal_Detail_Action_Favourite} onClick={setFavFn}>
+            <FontAwesomeIcon className={favStyle} icon={faHeart} />
+          </div>
           <div className={styles.ProductModal_Detail_Action_Space} />
           <div className={styles.ProductModal_Detail_Action_Button___Secondary}>Add to cart</div>
           <div className={styles.ProductModal_Detail_Action_Space} />

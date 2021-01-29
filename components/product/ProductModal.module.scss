@@ -66,6 +66,10 @@
 
       &_Rating {
         color: $grey;
+
+        &_Icon {
+          margin-right: 5px;
+        }
       }
     }
 
@@ -156,6 +160,14 @@
 
         border-radius: 50%;
         box-shadow: $shadow-icon;
+
+        &_Icon {
+          font-size: 18px;
+
+          &___Active {
+            color: $secondary;
+          }
+        }
       }
 
       &_Button {
