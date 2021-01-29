@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Modal, Button } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
-import { faStar } from "@fortawesome/free-regular-svg-icons"
+import { faStar, faHeart } from "@fortawesome/free-regular-svg-icons"
 
 import CardPrice from "./CardPrice"
 import ColorOptions from "./ColorOptions"
@@ -15,17 +15,32 @@ const ProductCard = (props) => {
   const [show, setShow] = useState(false)
   const [size, setSize] = useState()
   const [color, setColor] = useState()
+  const [fav, setFav] = useState(false)
 
-  const { name = "", price = 0, oriPrice = 0, attr = {}, info = {} } = props.data ?? {}
+  const { name = "", price = 0, oriPrice = 0, discAmount = 0, attr = {}, info = {} } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
   const { rating = 0 } = info
 
   const showFn = () => setShow(true)
   const closeFn = () => setShow(false)
 
+  const setFavFn = () => {
+    setFav(!fav)
+  }
+
+  var favStyle = styles.ProductCard_Info_Favourite_Icon
+
+  if (fav) favStyle += " " + styles.ProductCard_Info_Favourite_Icon___Active
+
   return (
     <>
       <div className={styles.ProductCard}>
+        <div className={styles.ProductCard_Info}>
+          <div className={styles.ProductCard_Info_Promo}>- {discAmount}%</div>
+          <div className={styles.ProductCard_Info_Favourite} onClick={setFavFn}>
+            <FontAwesomeIcon className={favStyle} icon={faHeart} />
+          </div>
+        </div>
         <div className={styles.ProductCard_ImageCont} onClick={showFn}>
           <img className={styles.ProductCard_Image} src="/prod1_grey3.jpg" />
         </div>

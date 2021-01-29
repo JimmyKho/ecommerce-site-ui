@@ -17,8 +17,61 @@ $padding: 10px;
   animation: fadein 1s;
   transition: transform 0.2s;
 
+  position: relative;
+
   &:hover {
     transform: $zoom-scale;
+  }
+
+  &_Info {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    font-size: 12px;
+    font-family: $number-font;
+
+    &_Promo {
+      color: $white;
+
+      border-radius: 20px;
+      background-color: $secondary;
+
+      padding: 5px 15px;
+      margin-right: 10px;
+    }
+
+    &_Favourite {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      width: 30px;
+      height: 30px;
+
+      background-color: $background-light;
+
+      border-radius: 50%;
+      box-shadow: $shadow-icon;
+
+      &_Icon {
+        font-size: 18px;
+
+        &___Active {
+          color: $secondary;
+        }
+      }
+    }
   }
 
   &_ImageCont {
