@@ -15,6 +15,10 @@ export default function Home() {
       <HomeContentLayout more={<div>More Voucher</div>}>
         <RowVoucher list={VOUCHERS} />
       </HomeContentLayout>
+
+      <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}>
+        <RowProduct list={PRODUCTS} />
+      </HomeContentLayout>
     </Layout>
   )
 }

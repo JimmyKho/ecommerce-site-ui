@@ -12,6 +12,9 @@
   font-size: 12px;
   font-weight: 400;
 
+  background: $white;
+  border-bottom: 1px solid $grey-light;
+
   cursor: pointer;
 
   &_Item {

@@ -7,8 +7,8 @@ const RowProduct = (props) => {
 
   return (
     <div className={styles.RowProduct}>
-      {list.map((item) => (
-        <div className={styles.RowProduct_Item}>
+      {list.map((item, index) => (
+        <div key={"Item" + index} className={styles.RowProduct_Item}>
           <ProductCard data={item} />
         </div>
       ))}

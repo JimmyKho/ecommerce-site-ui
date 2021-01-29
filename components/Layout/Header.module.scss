@@ -5,18 +5,99 @@
   justify-content: flex-start;
   align-items: center;
 
-  height: 50px;
+  width: 100%;
+
+  padding: 10px 20px;
+
+  background: $white;
+  border-bottom: 1px solid $grey-light;
+
+  &_Brand {
+    font-family: $logo-font;
+    font-size: 24px;
+    font-weight: bold;
+    color: $primary;
+    text-transform: uppercase;
+  }
+
+  &_Search {
+    flex: 1;
+    margin: 0px 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $background-light;
+    padding: 10px;
+    border-radius: 20px;
+
+    &_Icon {
+      color: $disable;
+      font-size: 14px;
+    }
+  }
+
+  &_Nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-weight: bold;
+
+    &_Text {
+      margin-left: 30px;
+      font-size: 12px;
+    }
+
+    &_Icon {
+      margin-left: 30px;
+      font-size: 20px;
+    }
+
+    &_Cart {
+      margin-left: 30px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      padding: 10px;
+      background-color: $primary;
+      border-radius: 10px;
+
+      color: $white;
+
+      &_Icon {
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      &_Text {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.Navigation {
+  display: flex;
+  justify-content: flex-start;
+  justify-content: flex-end;
+  align-items: center;
+
   width: 100%;
 
   padding: 0 20px;
 
-  font-family: $logo-font;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
+  background: $white;
+  border-bottom: 1px solid $grey-light;
 
-  background: crimson;
-
-  cursor: pointer;
+  &_Item {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+  }
 }
