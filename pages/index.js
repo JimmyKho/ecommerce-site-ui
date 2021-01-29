@@ -34,15 +34,18 @@ const PRODUCTS = [
     info: {
       rating: 4.8,
     },
+    image: "/prod1_grey3.jpg",
     attr: {
       colors: [
         {
           name: "Grey",
           code: "#d8d7d5",
+          images: ["/prod1_grey3.jpg", "/prod1_grey1.jpg", "/prod1_grey2.jpg"],
         },
         {
-          name: "Brown",
-          code: "#a47551",
+          name: "White",
+          code: "#fdfdfd",
+          images: ["/prod1_white1.jpg", "/prod1_white2.jpg", "/prod1_white3.jpg"],
         },
       ],
       sizes: [
@@ -68,15 +71,18 @@ const PRODUCTS = [
     info: {
       rating: 4.6,
     },
+    image: "/prod2_brown1.jpg",
     attr: {
       colors: [
         {
           name: "Brown",
           code: "#a47551",
+          images: ["/prod2_brown1.jpg", "/prod2_brown2.jpg", "/prod2_brown3.jpg"],
         },
         {
           name: "Grey",
           code: "#d8d7d5",
+          images: ["/prod2_grey1.jpg", "/prod2_grey2.jpg", "/prod2_grey3.jpg"],
         },
       ],
       sizes: [
@@ -102,15 +108,18 @@ const PRODUCTS = [
     info: {
       rating: 4.9,
     },
+    image: "/prod3_black1.jpg",
     attr: {
       colors: [
         {
           name: "Black",
           code: "#050606",
+          images: ["/prod3_black1.jpg", "/prod3_black2.jpg", "/prod3_black3.jpg"],
         },
         {
           name: "Green",
           code: "#59981a",
+          images: ["/prod3_green1.jpg", "/prod3_green2.jpg", "/prod3_green3.jpg"],
         },
       ],
       sizes: [
@@ -136,15 +145,18 @@ const PRODUCTS = [
     info: {
       rating: 4.3,
     },
+    image: "/prod4_navy1.jpg",
     attr: {
       colors: [
         {
           name: "Navy",
           code: "#003060",
+          images: ["/prod4_navy1.jpg", "/prod4_navy2.jpg", "/prod4_navy3.jpg"],
         },
         {
-          name: "Green",
-          code: "#59981a",
+          name: "Red",
+          code: "#e43d40",
+          images: ["/prod4_red1.jpg", "/prod4_red2.jpg", "/prod4_red3.jpg"],
         },
       ],
       sizes: [

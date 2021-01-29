@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
@@ -15,8 +15,11 @@ const ProductModal = (props) => {
   const [size, setSize] = useState()
   const [color, setColor] = useState()
   const [fav, setFav] = useState(false)
+  const [preview, setPreview] = useState()
+  const [gallery, setGallery] = useState([])
 
-  const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {} } = props.data ?? {}
+  const { data = {}, closeFn } = props
+  const { name, code, brand, price, oriPrice, discAmount, attr = {}, info = {}, image = "" } = data
   const { colors = [], sizes = [] } = attr
   const { rating = 0 } = info
 
@@ -36,16 +39,31 @@ const ProductModal = (props) => {
 
   if (fav) favStyle += " " + styles.ProductModal_Detail_Action_Favourite_Icon___Active
 
+  useEffect(() => {
+    if (color) {
+      colors.map((item) => {
+        if (item.name == color) {
+          setPreview(item.images[0])
+          setGallery(item.images)
+        }
+      })
+    } else {
+      setColor(colors[0].name)
+      setGallery(colors[0].images)
+      setPreview(image)
+    }
+  }, [color])
+
   return (
     <div className={styles.ProductModal}>
       <div className={styles.ProductModal_Image}>
         <div className={styles.ProductModal_Image_Gallery}>
-          <img className={styles.ProductModal_Image_Gallery_Item} src="/prod1_grey3.jpg" />
-          <img className={styles.ProductModal_Image_Gallery_Item} src="/prod1_grey3.jpg" />
-          <img className={styles.ProductModal_Image_Gallery_Item} src="/prod1_grey3.jpg" />
+          {gallery.map((item, index) => (
+            <img key={"Item" + index} className={styles.ProductModal_Image_Gallery_Item} src={item} />
+          ))}
         </div>
 
-        <img className={styles.ProductModal_Image_Preview} src="/prod1_grey3.jpg" />
+        <img className={styles.ProductModal_Image_Preview} src={preview} />
       </div>
       <div className={styles.ProductModal_Detail}>
         <div className={styles.ProductModal_Detail_Extra}>
@@ -73,7 +91,7 @@ const ProductModal = (props) => {
 
         <div className={styles.ProductModal_Detail_Info}>
           <div className={styles.ProductModal_Detail_Info_Title}>Colors</div>
-          <div className={styles.ProductModal_Detail_Info_Title___Regular}>Selected Color</div>
+          <div className={styles.ProductModal_Detail_Info_Title___Regular}>{color}</div>
         </div>
         <div className={styles.ProductModal_Detail_Info}>
           <ColorOptions selected={color} onSelect={(item) => setColor(item)} options={colors} large />
@@ -112,9 +130,13 @@ const ProductModal = (props) => {
             <FontAwesomeIcon className={favStyle} icon={faHeart} />
           </div>
           <div className={styles.ProductModal_Detail_Action_Space} />
-          <div className={styles.ProductModal_Detail_Action_Button___Secondary}>Add to cart</div>
+          <div className={styles.ProductModal_Detail_Action_Button___Secondary} onClick={closeFn}>
+            Add to cart
+          </div>
           <div className={styles.ProductModal_Detail_Action_Space} />
-          <div className={styles.ProductModal_Detail_Action_Button___Primary}>Buy Now</div>
+          <div className={styles.ProductModal_Detail_Action_Button___Primary} onClick={closeFn}>
+            Buy Now
+          </div>
         </div>
       </div>
     </div>

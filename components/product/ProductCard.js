@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Modal, Button } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
@@ -16,8 +16,9 @@ const ProductCard = (props) => {
   const [size, setSize] = useState()
   const [color, setColor] = useState()
   const [fav, setFav] = useState(false)
+  const [preview, setPreview] = useState()
 
-  const { name = "", price = 0, oriPrice = 0, discAmount = 0, attr = {}, info = {} } = props.data ?? {}
+  const { name = "", price = 0, oriPrice = 0, discAmount = 0, attr = {}, info = {}, image = "" } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
   const { rating = 0 } = info
 
@@ -32,6 +33,16 @@ const ProductCard = (props) => {
 
   if (fav) favStyle += " " + styles.ProductCard_Info_Favourite_Icon___Active
 
+  useEffect(() => {
+    if (color) {
+      colors.map((item) => {
+        if (item.name == color) setPreview(item.images[0])
+      })
+    } else {
+      setPreview(image)
+    }
+  }, [color])
+
   return (
     <>
       <div className={styles.ProductCard}>
@@ -42,7 +53,7 @@ const ProductCard = (props) => {
           </div>
         </div>
         <div className={styles.ProductCard_ImageCont} onClick={showFn}>
-          <img className={styles.ProductCard_Image} src="/prod1_grey3.jpg" />
+          <img className={styles.ProductCard_Image} src={preview} />
         </div>
         <div className={styles.ProductCard_Content}>
           <div className={styles.ProductCard_Heading} onClick={showFn}>
@@ -76,7 +87,7 @@ const ProductCard = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <ProductModal data={props.data} />
+        <ProductModal data={props.data} closeFn={closeFn} />
       </Modal>
     </>
   )
