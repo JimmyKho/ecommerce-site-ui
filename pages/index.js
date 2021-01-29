@@ -8,15 +8,15 @@ export default function Home() {
   return (
     <Layout>
       <PageCarousel />
-      <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}>
+      <HomeContentLayout>
         <RowProduct list={PRODUCTS} />
       </HomeContentLayout>
 
-      <HomeContentLayout more={<div>More Voucher</div>}>
+      <HomeContentLayout more={<div className="PrimaryText">More Voucher</div>}>
         <RowVoucher list={VOUCHERS} />
       </HomeContentLayout>
 
-      <HomeContentLayout title={<div>Flash Sales</div>} more={<div>All Sales</div>}>
+      <HomeContentLayout more={<div className="PrimaryText">All Product</div>}>
         <RowProduct list={PRODUCTS} />
       </HomeContentLayout>
     </Layout>
