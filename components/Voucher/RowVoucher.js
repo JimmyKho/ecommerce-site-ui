@@ -7,8 +7,8 @@ const RowVoucher = (props) => {
 
   return (
     <div className={styles.RowVoucher}>
-      {list.map((item) => (
-        <div className={styles.RowVoucher_Item}>
+      {list.map((item, index) => (
+        <div key={"Item" + index} className={styles.RowVoucher_Item}>
           <VoucherCard data={item} />
         </div>
       ))}
