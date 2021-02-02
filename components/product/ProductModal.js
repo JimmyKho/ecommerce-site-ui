@@ -44,6 +44,10 @@ const ProductModal = (props) => {
 
   if (fav) favStyle += " " + styles.ProductModal_Detail_Action_Favourite_Icon___Active
 
+  const setPreviewFn = (image) => {
+    setPreview(image)
+  }
+
   useEffect(() => {
     if (color) {
       colors.map((item) => {
@@ -64,7 +68,12 @@ const ProductModal = (props) => {
       <div className={styles.ProductModal_Image}>
         <div className={styles.ProductModal_Image_Gallery}>
           {gallery.map((item, index) => (
-            <img key={"Item" + index} className={styles.ProductModal_Image_Gallery_Item} src={item} />
+            <img
+              key={"Item" + index}
+              className={styles.ProductModal_Image_Gallery_Item}
+              src={item}
+              onClick={() => setPreviewFn(item)}
+            />
           ))}
         </div>
 
