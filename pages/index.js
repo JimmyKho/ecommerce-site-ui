@@ -3,12 +3,13 @@ import PageCarousel from "../components/PageCarousel"
 import HomeContentLayout from "../components/Layout/HomeContentLayout"
 import RowProduct from "../components/Product/RowProduct"
 import RowVoucher from "../components/Voucher/RowVoucher"
+import FlashSales from "../components/FlashSales"
 
 export default function Home() {
   return (
     <Layout>
       <PageCarousel />
-      <HomeContentLayout>
+      <HomeContentLayout title={<FlashSales />}>
         <RowProduct list={PRODUCTS} />
       </HomeContentLayout>
 

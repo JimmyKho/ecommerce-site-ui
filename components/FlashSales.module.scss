@@ -1,0 +1,45 @@
+@import "../theme/theme";
+
+$size: 25px;
+
+.FlashSales {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 18px;
+
+  &_Icon {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  &_Text {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  &_Timer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &_Item {
+      width: $size;
+      height: $size;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 12px;
+      font-family: $number-font;
+
+      margin-right: 5px;
+      border-radius: 5px;
+
+      color: $white;
+      background-color: $primary;
+    }
+  }
+}
