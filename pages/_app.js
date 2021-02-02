@@ -3,6 +3,7 @@ import { useStore } from "../store"
 
 import "../styles/globals.scss"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "react-toastify/dist/ReactToastify.css"
 
 function MyApp({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)

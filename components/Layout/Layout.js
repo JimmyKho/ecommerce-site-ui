@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { ToastContainer } from "react-toastify"
 
 import Header from "./Header"
 import CategoryList from "./CategoryList"
@@ -12,6 +13,8 @@ const Layout = (props) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
     </Head>
+
+    <ToastContainer />
 
     <Header />
     <CategoryList />

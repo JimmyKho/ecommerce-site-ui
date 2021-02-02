@@ -5,6 +5,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { faStar, faHeart } from "@fortawesome/free-regular-svg-icons"
 
 import { useDispatch } from "react-redux"
+import { toast } from "react-toastify"
 
 import CardPrice from "./CardPrice"
 import ColorOptions from "./ColorOptions"
@@ -39,6 +40,16 @@ const ProductCard = (props) => {
       params: {
         count,
       },
+    })
+
+    toast.success("Added to Cart", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
     })
   }
 
