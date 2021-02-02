@@ -35,6 +35,11 @@ const ProductModal = (props) => {
     setFav(!fav)
   }
 
+  const addCartFn = () => {
+    props.addCartFn && props.addCartFn(quantity)
+    closeFn()
+  }
+
   var favStyle = styles.ProductModal_Detail_Action_Favourite_Icon
 
   if (fav) favStyle += " " + styles.ProductModal_Detail_Action_Favourite_Icon___Active
@@ -130,11 +135,11 @@ const ProductModal = (props) => {
             <FontAwesomeIcon className={favStyle} icon={faHeart} />
           </div>
           <div className={styles.ProductModal_Detail_Action_Space} />
-          <div className={styles.ProductModal_Detail_Action_Button___Secondary} onClick={closeFn}>
+          <div className={styles.ProductModal_Detail_Action_Button___Secondary} onClick={addCartFn}>
             Add to cart
           </div>
           <div className={styles.ProductModal_Detail_Action_Space} />
-          <div className={styles.ProductModal_Detail_Action_Button___Primary} onClick={closeFn}>
+          <div className={styles.ProductModal_Detail_Action_Button___Primary} onClick={addCartFn}>
             Buy Now
           </div>
         </div>

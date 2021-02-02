@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { faStar, faHeart } from "@fortawesome/free-regular-svg-icons"
 
+import { useDispatch } from "react-redux"
+
 import CardPrice from "./CardPrice"
 import ColorOptions from "./ColorOptions"
 import SizeOptions from "./SizeOptions"
@@ -18,6 +20,8 @@ const ProductCard = (props) => {
   const [fav, setFav] = useState(false)
   const [preview, setPreview] = useState()
 
+  const dispatch = useDispatch()
+
   const { name = "", price = 0, oriPrice = 0, discAmount = 0, attr = {}, info = {}, image = "" } = props.data ?? {}
   const { colors = [], sizes = [] } = attr
   const { rating = 0 } = info
@@ -27,6 +31,15 @@ const ProductCard = (props) => {
 
   const setFavFn = () => {
     setFav(!fav)
+  }
+
+  const addCartFn = (count) => {
+    dispatch({
+      type: "ADD_CART",
+      params: {
+        count,
+      },
+    })
   }
 
   var favStyle = styles.ProductCard_Info_Favourite_Icon
@@ -66,12 +79,12 @@ const ProductCard = (props) => {
             <ColorOptions selected={color} onSelect={(item) => setColor(item)} options={colors} />
             <SizeOptions selected={size} onSelect={(item) => setSize(item)} options={sizes} />
           </div>
-          <div className={styles.ProductCard_Footer} onClick={showFn}>
-            <div className={styles.ProductCard_Footer_Rating}>
+          <div className={styles.ProductCard_Footer}>
+            <div className={styles.ProductCard_Footer_Rating} onClick={showFn}>
               <FontAwesomeIcon className={styles.ProductCard_Footer_Rating_Icon} icon={faStar} />
               {rating}
             </div>
-            <div className={styles.ProductCard_Footer_Buy}>
+            <div className={styles.ProductCard_Footer_Buy} onClick={() => addCartFn(1)}>
               BUY
               <FontAwesomeIcon className={styles.ProductCard_Footer_Buy_Icon} icon={faPlus} />
             </div>
@@ -87,7 +100,7 @@ const ProductCard = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <ProductModal data={props.data} closeFn={closeFn} />
+        <ProductModal data={props.data} closeFn={closeFn} addCartFn={addCartFn} />
       </Modal>
     </>
   )
