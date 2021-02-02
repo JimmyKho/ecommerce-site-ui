@@ -4,6 +4,7 @@ import HomeContentLayout from "../components/Layout/HomeContentLayout"
 import RowProduct from "../components/Product/RowProduct"
 import RowVoucher from "../components/Voucher/RowVoucher"
 import FlashSales from "../components/FlashSales"
+import Category from "../components/Category"
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <RowVoucher list={VOUCHERS} />
       </HomeContentLayout>
 
-      <HomeContentLayout more={<div className="PrimaryText">All Product</div>}>
+      <HomeContentLayout title={<Category />} more={<div className="PrimaryText">All Product</div>}>
         <RowProduct list={PRODUCTS} />
       </HomeContentLayout>
     </Layout>
